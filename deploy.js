@@ -93,6 +93,7 @@ function parseArgs() {
 }
 
 function spawnOrFail(command, args, options) {
+  console.log(command, (args || []).join(' '), options)
   const cmd = spawnSync(command, args, options);
   if (cmd.error) {
     console.log(`Command ${command} failed with ${cmd.error.code}`);
